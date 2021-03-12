@@ -84,7 +84,7 @@ class CNN:
 
     def set_weights(self, mode, path):
         if mode == 'save':
-            torch.save(self.model.state_dict(), path)
+            torch.save(self.model.state_dict(), path+r'/weights.pth')
             print('Weights saved.')
         elif mode == 'upload':
             self.model.load_state_dict(torch.load(*glob.glob(path + r'/*.pth')))
